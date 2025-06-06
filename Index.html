@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMG Ship Service - Ship Chandler Profesional | Progreso, Yucatán</title>
+    <meta name="description" content="Ship Chandler integral en Progreso, Yucatán. Aprovisionamiento naval, combustibles, repuestos, crew change y servicios únicos mayas. Disponible 24/7.">
+    <meta name="keywords" content="ship chandler, aprovisionamiento naval, Progreso Yucatan, combustibles marinos, repuestos navales, crew change">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-blue: #00a8cc;
+            --dark-blue: #005c7a;
+            --light-blue: #40c4e6;
+            --accent-orange: #ff6b35;
+            --dark-gray: #2c3e50;
+            --light-gray: #ecf0f1;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .header.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(0, 92, 122, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .logo-icon {
+            background: white;
+            color: var(--primary-blue);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+        
+        .nav-menu a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+        .emergency-btn {
+            background: var(--accent-orange);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .emergency-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 107, 53, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0); }
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 92, 122, 0.9), rgba(0, 168, 204, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23e3f2fd" width="1200" height="600"/><path fill="%2300a8cc" opacity="0.1" d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="1" fill="white" opacity="0.1"/><circle cx="40" cy="80" r="1.5" fill="white" opacity="0.1"/></svg>');
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideInUp 1s ease-out;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: slideInUp 1s ease-out 0.2s both;
+        }
+        
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            animation: slideInUp 1s ease-out 0.4s both;
+        }
+        
+        .hero-feature {
+            text-align: center;
+        }
+        
+        .hero-feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+        
+        .cta-primary, .cta-secondary {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-primary {
+            background: var(--accent-orange);
+            color: white;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+        }
+        
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .cta-secondary:hover {
+            background: white;
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Services Overview */
+        .services-overview {
+            padding: 5rem 0;
+            background: linear-gradient(45deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-blue);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 168, 204, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features {
+            list-style: none;
+        }
+        
+        .service-features li {
+            color: #555;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+        
+        /* Why Choose Us */
+        .why-choose {
+            padding: 5rem 0;
+            background: var(--dark-blue);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .why-choose::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0,0 L100,0 L100,80 Q50,100 0,80 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: 200px 100px;
+            animation: wave 10s infinite linear;
+        }
+        
+        @keyframes wave {
+            0% { transform: translateX(-200px); }
+            100% { transform: translateX(200px); }
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .advantage-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .advantage-item:hover {
+            transform: scale(1.05);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .advantage-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--light-blue);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, white 100%);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .contact-info {
+            background: var(--primary-blue);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s infinite linear;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-item-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            width: 40px;
+        }
+        
+        .quote-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-blue);
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 168, 204, 0.1);
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 168, 204, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: var(--light-blue);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section ul li a:hover {
+            color: var(--light-blue);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 1rem;
+            text-align: center;
+            color: #bbb;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-features {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            animation: bounce 2s infinite;
+            text-decoration: none;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .whatsapp-float:hover {
+            background: #20ba5a;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">🚢</div>
+                <div>
+                    <div style="font-size: 1.2rem;">JMG SHIP</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">SERVICE</div>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#ventajas">Ventajas</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            
+            <button class="emergency-btn" onclick="window.open('https://wa.me/529991234567', '_blank')">
+                🚨 EMERGENCIA 24/7
+            </button>
+            
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Ship Chandler Profesional</h1>
+            <p class="hero-subtitle">
+                Aprovisionamiento naval integral en Progreso, Yucatán<br>
+                Más de 200 productos y servicios • Disponibilidad 24/7
+            </p>
+            
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <span class="hero-feature-icon">⛽</span>
+                    <strong>Combustibles</strong><br>
+                    Entrega directa
+                </div>
+                <div class="hero-feature">
+                    <span class="hero-feature-icon">🍽️</span>
+                    <strong>Provisiones</strong><br>
+                    Frescas y conservadas
+                </div>
+                <div class="hero-feature">
+                    <span class="hero-feature-icon">⚙️</span>
+                    <strong>Repuestos</strong><br>
+                    Stock completo
+                </div>
+                <div class="hero-feature">
+                    <span class="hero-feature-icon">👥</span>
+                    <strong>Crew Change</strong><br>
+                    Servicio integral
+                </div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="#contacto" class="cta-primary">Solicitar Cotización</a>
+                <a href="#servicios" class="cta-secondary">Ver Catálogo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview" id="servicios">
+        <div class="container">
+            <h2 class="section-title fade-in">Nuestros Servicios</h2>
+            <p class="section-subtitle fade-in">
+                Catálogo integral de más de 200 productos y servicios especializados para la industria naval
+            </p>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">⛽</div>
+                    <h3>Combustibles y Lubricantes</h3>
+                    <p>Suministro directo de diesel marino, gasolina y aceites especializados.</p>
+                    <ul class="service-features">
+                        <li>Diesel marino bajo azufre</li>
+                        <li>Aceites marinos certificados</li>
+                        <li>Entrega directa al barco</li>
+                        <li>Disponible 24/7</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">💧</div>
+                    <h3>Agua Potable</h3>
+                    <p>Suministro de agua potable certificada por cisterna y embotellada.</p>
+                    <ul class="service-features">
+                        <li>Agua a granel por cisterna</li>
+                        <li>Agua embotellada</li>
+                        <li>Hielo industrial</li>
+                        <li>Certificación sanitaria</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🍽️</div>
+                    <h3>Provisiones Completas</h3>
+                    <p>Alimentos frescos, conservas y todo lo necesario para la tripulación.</p>
+                    <ul class="service-features">
+                        <li>Carnes y pescados frescos</li>
+                        <li>Frutas y verduras</li>
+                        <li>Productos básicos</li>
+                        <li>Bebidas y refrescos</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Repuestos Marinos</h3>
+                    <p>Stock completo de partes y repuestos para motores y sistemas navales.</p>
+                    <ul class="service-features">
+                        <li>Filtros y partes de motor</li>
+                        <li>Componentes hidráulicos</li>
+                        <li>Partes eléctricas</li>
+                        <li>Entrega urgente</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🦺</div>
+                    <h3>Equipos de Seguridad</h3>
+                    <p>Equipamiento completo de seguridad naval certificado SOLAS.</p>
+                    <ul class="service-features">
+                        <li>Chalecos salvavidas</li>
+                        <li>Extintores marinos</li>
+                        <li>Equipos de emergencia</li>
+                        <li>Certificaciones vigentes</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">👥</div>
+                    <h3>Servicios de Tripulación</h3>
+                    <p>Cambio completo de tripulación y servicios integrales.</p>
+                    <ul class="service-features">
+                        <li>Crew change completo</li>
+                        <li>Transporte aeropuerto-puerto</li>
+                        <li>Gestión de documentos</li>
+                        <li>Servicios bancarios</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🚛</div>
+                    <h3>Logística y Transporte</h3>
+                    <p>Servicios completos de logística portuaria y transporte.</p>
+                    <ul class="service-features">
+                        <li>Entrega directa al barco</li>
+                        <li>Gestión aduanal</li>
+                        <li>Agencia naviera</li>
+                        <li>Servicios de grúa</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🏛️</div>
+                    <h3>Experiencias Mayas</h3>
+                    <p>Servicios únicos: turismo cultural y productos típicos de Yucatán.</p>
+                    <ul class="service-features">
+                        <li>Tours a Chichen Itzá</li>
+                        <li>Experiencias en cenotes</li>
+                        <li>Catering maya</li>
+                        <li>Artesanías locales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose" id="ventajas">
+        <div class="container">
+            <h2 class="section-title fade-in">¿Por Qué Elegir JMG Ship Service?</h2>
+            <p class="section-subtitle fade-in">
+                Somos el único Ship Chandler del Golfo de México que combina aprovisionamiento profesional con experiencias culturales únicas
+            </p>
+            
+            <div class="advantages-grid">
+                <div class="advantage-item fade-in">
+                    <div class="advantage-icon">🌊</div>
+                    <h4>Ubicación Estratégica</h4>
+                    <p>Puerto de Progreso, hub del Golfo de México</p>
+                </div>
+                
+                <div class="advantage-item fade-in">
+                    <div class="advantage-icon">⏰</div>
+                    <h4>Disponibilidad 24/7</h4>
+                    <p>Servicio de emergencia las 24 horas</p>
+                </div>
+                
+                <div class="advantage-item fade-in">
+                    <div class="advantage-icon">🎯</div>
+                    <h4>Servicio Integral</h4>
+                    <p>Más de 200 productos y servicios</p>
+                </div>
+                
+                <div class="advantage-item fade-in">
+                    <div class="advantage-icon">💰</div>
+                    <h4>Precios Competitivos</h4>
+                    <p>Tarifas justas sin comprometer calidad</p>
+                </div>
+                
+                <div class="advantage-item fade-in">
+                    <div class="advantage-icon">🚀</div>
+                    <h4>Respuesta Rápida</h4>
+                    <p>Cotización en menos de 2 horas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <h2 class="section-title fade-in">Contacto</h2>
+            <p class="section-subtitle fade-in">
+                Estamos disponibles 24/7 para atender sus necesidades navales
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <h3>Información de Contacto</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📧</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            jmgshipservice@gmail.com
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📱</div>
+                        <div>
+                            <strong>WhatsApp</strong><br>
+                            +52 (999) 123-4567
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <div>
+                            <strong>Teléfono</strong><br>
+                            +52 (999) 987-6543
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div>
+                            <strong>Ubicación</strong><br>
+                            Puerto de Progreso, Yucatán, México
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">🌐</div>
+                        <div>
+                            <strong>Cobertura</strong><br>
+                            Golfo de México - Península de Yucatán
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">⏰</div>
+                        <div>
+                            <strong>Emergencias</strong><br>
+                            Disponible 24/7
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quote-form fade-in">
+                    <h3>Solicitar Cotización</h3>
+                    <form id="quoteForm">
+                        <div class="form-group">
+                            <label for="vessel-name">Nombre del Barco</label>
+                            <input type="text" id="vessel-name" name="vessel-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="imo">Número IMO</label>
+                            <input type="text" id="imo" name="imo">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="eta">ETA (Fecha de Llegada)</label>
+                            <input type="datetime-local" id="eta" name="eta" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="etd">ETD (Fecha de Salida)</label>
+                            <input type="datetime-local" id="etd" name="etd">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service-type">Tipo de Servicio</label>
+                            <select id="service-type" name="service-type" required>
+                                <option value="">Seleccionar servicio</option>
+                                <option value="combustibles">Combustibles y Lubricantes</option>
+                                <option value="agua">Agua Potable</option>
+                                <option value="provisiones">Provisiones y Víveres</option>
+                                <option value="repuestos">Repuestos Marinos</option>
+                                <option value="seguridad">Equipos de Seguridad</option>
+                                <option value="crew-change">Crew Change</option>
+                                <option value="logistica">Logística y Transporte</option>
+                                <option value="emergencia">Servicio de Emergencia</option>
+                                <option value="integral">Servicio Integral</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="crew-number">Número de Tripulantes</label>
+                            <input type="number" id="crew-number" name="crew-number" min="1">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-person">Persona de Contacto</label>
+                            <input type="text" id="contact-person" name="contact-person" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-email">Email de Contacto</label>
+                            <input type="email" id="contact-email" name="contact-email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-phone">Teléfono/WhatsApp</label>
+                            <input type="tel" id="contact-phone" name="contact-phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="requirements">Requerimientos Específicos</label>
+                            <textarea id="requirements" name="requirements" rows="4" 
+                                placeholder="Describa sus necesidades específicas..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            Enviar Solicitud de Cotización
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>JMG Ship Service</h4>
+                    <p>Ship Chandler profesional en Progreso, Yucatán. Aprovisionamiento naval integral con más de 200 productos y servicios disponibles 24/7.</p>
+                    <br>
+                    <p><strong>Certificaciones:</strong> Ship Chandler Oficial, Servicios Portuarios, ISO 9001</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Servicios Principales</h4>
+                    <ul>
+                        <li><a href="#servicios">Combustibles y Lubricantes</a></li>
+                        <li><a href="#servicios">Agua Potable</a></li>
+                        <li><a href="#servicios">Provisiones y Víveres</a></li>
+                        <li><a href="#servicios">Repuestos Marinos</a></li>
+                        <li><a href="#servicios">Equipos de Seguridad</a></li>
+                        <li><a href="#servicios">Crew Change</a></li>
+                        <li><a href="#servicios">Servicios de Emergencia</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Servicios Especiales</h4>
+                    <ul>
+                        <li><a href="#servicios">Experiencias Mayas</a></li>
+                        <li><a href="#servicios">Tours Culturales</a></li>
+                        <li><a href="#servicios">Catering Regional</a></li>
+                        <li><a href="#servicios">Servicios Médicos</a></li>
+                        <li><a href="#servicios">Logística Integral</a></li>
+                        <li><a href="#servicios">Servicios Subacuáticos</a></li>
+                        <li><a href="#servicios">Gases Industriales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Información</h4>
+                    <ul>
+                        <li><strong>Puerto:</strong> Progreso, Yucatán</li>
+                        <li><strong>Cobertura:</strong> Golfo de México</li>
+                        <li><strong>Emergencias:</strong> 24/7</li>
+                        <li><strong>Respuesta:</strong> < 2 horas</li>
+                        <li><strong>Email:</strong> jmgshipservice@gmail.com</li>
+                        <li><strong>WhatsApp:</strong> +52 999 123 4567</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 JMG Ship Service. Todos los derechos reservados. | 
+                   Ship Chandler Profesional en Progreso, Yucatán, México | 
+                   Aprovisionamiento Naval Integral</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/529991234567?text=Hola,%20necesito%20servicios%20de%20ship%20chandler%20para%20mi%20embarcación" 
+       class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
+        📱
+    </a>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Create WhatsApp message
+            let message = `🚢 *SOLICITUD DE COTIZACIÓN - JMG SHIP SERVICE*\n\n`;
+            message += `*Barco:* ${data['vessel-name']}\n`;
+            if (data['imo']) message += `*IMO:* ${data['imo']}\n`;
+            message += `*ETA:* ${new Date(data['eta']).toLocaleString('es-MX')}\n`;
+            if (data['etd']) message += `*ETD:* ${new Date(data['etd']).toLocaleString('es-MX')}\n`;
+            message += `*Servicio:* ${data['service-type']}\n`;
+            if (data['crew-number']) message += `*Tripulantes:* ${data['crew-number']}\n`;
+            message += `*Contacto:* ${data['contact-person']}\n`;
+            message += `*Email:* ${data['contact-email']}\n`;
+            message += `*Teléfono:* ${data['contact-phone']}\n`;
+            if (data['requirements']) message += `*Requerimientos:*\n${data['requirements']}\n`;
+            message += `\n*Favor de enviar cotización urgente.*`;
+            
+            // Open WhatsApp
+            const whatsappUrl = `https://wa.me/529991234567?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            // Show success message
+            alert('¡Solicitud enviada! Se abrirá WhatsApp para completar el envío.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Mobile menu toggle (basic implementation)
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Auto-update ETA/ETD with current time + buffer
+        document.addEventListener('DOMContentLoaded', function() {
+            const now = new Date();
+            const etaInput = document.getElementById('eta');
+            const etdInput = document.getElementById('etd');
+            
+            // Set ETA to tomorrow at 08:00
+            const tomorrow = new Date(now);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setHours(8, 0, 0, 0);
+            etaInput.value = tomorrow.toISOString().slice(0, 16);
+            
+            // Set ETD to day after tomorrow at 18:00
+            const dayAfter = new Date(tomorrow);
+            dayAfter.setDate(dayAfter.getDate() + 1);
+            dayAfter.setHours(18, 0, 0, 0);
+            etdInput.value = dayAfter.toISOString().slice(0, 16);
+        });
+
+        // Add some interactive elements
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Emergency button pulse effect
+        setInterval(() => {
+            const emergencyBtn = document.querySelector('.emergency-btn');
+            emergencyBtn.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                emergencyBtn.style.transform = 'scale(1)';
+            }, 200);
+        }, 3000);
+
+        console.log('🚢 JMG Ship Service - Website cargada exitosamente');
+        console.log('📧 Contacto: jmgshipservice@gmail.com');
+        console.log('📱 WhatsApp: +52 999 123 4567');
+    </script>
+</body>
+</html>
